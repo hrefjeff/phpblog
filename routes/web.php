@@ -15,12 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('about', function () {
+    return view('about');
+});
+
 // Second Route method – Root URL with ID will match this method
-Route::get('/ID/{id}',function($id){
+Route::get('ID/{id}',function($id){
     echo 'ID: '.$id;
 });
 
 // Third Route method – Root URL with or without name will match this method
-Route::get('/user/{name?}',function($name = 'Virat Gandhi'){
+// Default will be some street fighter dude
+Route::get('/user/{name?}',function($name = 'Zangief'){
     echo "Name: ".$name;
 });
